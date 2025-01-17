@@ -1,2 +1,6 @@
 #!/usr/bin/python3
-print([i for i in range(01,101)])
+for i in range(100):
+    if i < 99:
+        print("{:02}".format(i), end=", ")
+    else:
+        print("{:02}".format(i), end="\n")
