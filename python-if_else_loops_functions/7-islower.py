@@ -1,2 +1,3 @@
 #!/usr/bin/env python3
-print(f'{i:>02}' for i in range(1, 16))
+def islower(c):
+    return ord('a') <= ord(c) <= ord('z')
