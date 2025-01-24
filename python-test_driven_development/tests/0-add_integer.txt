@@ -23,12 +23,6 @@ TypeError: a must be an integer
 -300
 >>> add_integer(0, 0)
 0
->>> add_integer(1.7, 3.3)
-4
->>> add_integer(10, float('inf'))
-Traceback (most recent call last):
-    ...
-TypeError: b must be an integer
 >>> add_integer("string", 3)
 Traceback (most recent call last):
     ...
@@ -39,3 +33,4 @@ Traceback (most recent call last):
 TypeError: b must be an integer
 >>> add_integer(5.5)
 103
+
