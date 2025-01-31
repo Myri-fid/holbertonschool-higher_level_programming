@@ -79,3 +79,9 @@ class Rectangle:
         périmètre du rectangle.
         """
         return f"Rectangle({self.width}, {self.height})"
+
+    def __del__(self):
+        """
+        perimetre du rectangle
+        """
+        print("Bye rectangle...")
