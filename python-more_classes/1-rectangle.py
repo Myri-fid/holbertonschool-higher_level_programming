@@ -1,17 +1,17 @@
 #!/usr/bin/python3
 """
-Documentation
+Module de documentation pour rectangle
 """
-
 
 class Rectangle:
     """
-    Rectangle class empty
+    Class rectangle.
     """
 
     def __init__(self, width=0, height=0):
         """
-        Initialisation de la classe Rectangle.
+        Initialisation de la class Rectangle.
+
         """
         self.width = width
         self.height = height
@@ -19,14 +19,14 @@ class Rectangle:
     @property
     def width(self):
         """
-        Initialisation de la classe Rectangle.
+        def widht self
         """
         return self.__width
 
     @width.setter
     def width(self, value):
         """
-        Initialisation de la classe Rectangle.
+        def widht self
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -37,18 +37,17 @@ class Rectangle:
     @property
     def height(self):
         """
-        Initialisation de la classe Rectangle.
+        def height self
         """
         return self.__height
 
     @height.setter
     def height(self, value):
         """
-        Initialisation de la classe Rectangle.
+        def height self
         """
-
         if not isinstance(value, int):
-            raise TypeError("width must be an integer")
+            raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("width must be >= 0")
-        self.__width = value
+            raise ValueError("height must be >= 0")
+        self.__height = value
