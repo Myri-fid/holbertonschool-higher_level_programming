@@ -77,4 +77,4 @@ class Rectangle:
         """
         périmètre du rectangle.
         """
-        return
+        return f"Rectangle({self.width}, {self.height})"
