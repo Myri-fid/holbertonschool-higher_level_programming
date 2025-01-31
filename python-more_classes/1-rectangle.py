@@ -3,6 +3,7 @@
 Module de documentation pour rectangle
 """
 
+
 class Rectangle:
     """
     Class rectangle.
