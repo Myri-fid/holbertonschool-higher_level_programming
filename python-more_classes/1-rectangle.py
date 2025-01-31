@@ -13,7 +13,8 @@ Rectangle class empty
         """
         Initialisation de la classe Rectangle.
         """
-        pass
+        self.__width = width
+        self.__height = height
 
     def width(self):
         """
