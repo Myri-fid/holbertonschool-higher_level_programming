@@ -25,4 +25,4 @@ class Square:
         Initialisation class Square.
         Initialise l'attribut d'instance size.
         """
-    pass
+        return self.__size ** 2
