@@ -3,6 +3,7 @@
 Module de documentation pour rectangle.py
 """
 
+
 class Rectangle:
     """
     Classe qui définit un rectangle.
