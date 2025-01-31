@@ -26,7 +26,7 @@ class Square:
 
         return self.__size
 
-    @property
+    @size.setter
     def size(self, value):
         """
         Initialisation class Square.
