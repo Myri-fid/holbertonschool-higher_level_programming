@@ -60,4 +60,7 @@ class Rectangle:
         return self.width * self.height
 
     def perimeter(self):
+        """
+        def perimetre self
+        """
         return 2 * (self.length + self.width)
