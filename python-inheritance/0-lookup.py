@@ -5,5 +5,4 @@ def lookup(obj):
     attributes and methods of an object
     """
 
-
     print(dir(obj))
