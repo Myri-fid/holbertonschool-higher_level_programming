@@ -44,3 +44,7 @@ class Rectangle:
 
         self.__width = width
         self.__height = height
+        if not isinstance(width, height, int):
+            raise TypeError("")
+        if width or height <= 0:
+            raise ValueError("")
