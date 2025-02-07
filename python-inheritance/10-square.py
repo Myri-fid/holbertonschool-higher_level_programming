@@ -71,6 +71,9 @@ class Square(Rectangle):
     """
 
     def __init__(self, size):
+        """
+        class square that inherits from Rectangle
+        """
         super().integer_validator("size", size)
         self.__size = size
 
@@ -84,4 +87,4 @@ class Square(Rectangle):
         """
         Return a string representation of the rectangle
         """
-        return f"[Rectangle] {self.__width}/{self.__height}"
+        return f"[Rectangle] {self.__size}/{self.__size}"
