@@ -42,9 +42,7 @@ class Rectangle:
         class Rectangle that inherits from BaseGeometry
         """
 
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
-        if not isinstance(width, height, int):
-            raise TypeError("")
-        if width or height <= 0:
-            raise ValueError("")
