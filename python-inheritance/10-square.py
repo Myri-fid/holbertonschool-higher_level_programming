@@ -84,4 +84,4 @@ class Square(Rectangle):
         """
         Return the area of the rectangle
         """
-        raise Exception("area() is not implemented")
+        return self.__size * self.__size
