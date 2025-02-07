@@ -7,8 +7,7 @@ inherits from Rectangle.
 
 class BaseGeometry:
     """
-    This module defines the Square class that
-    inherits from Rectangle.
+    This module defines the Square class that inherits from Rectangle.
     """
 
     def area(self):
