@@ -10,11 +10,13 @@ class Dog(Animal):
     
     def sound(self):
         return "Bark"  
-    dog = Dog()
-    print(dog.sound())
 
 class Cat(Animal):
     def sound(self):
         return "Meow"  
-    cat = Cat()
-    print(cat.sound())
+
+
+dog = Dog()
+cat = Cat()
+print(cat.sound())
+print(dog.sound())
