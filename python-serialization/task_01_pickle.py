@@ -46,4 +46,5 @@ class CustomObject:
         using the pickle module
         """
 
-        pass
+        with open(filename, 'rb') as f:
+            return pickle.load(f)
