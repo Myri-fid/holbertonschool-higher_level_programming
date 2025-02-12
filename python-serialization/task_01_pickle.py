@@ -41,5 +41,9 @@ class CustomObject:
 
     @classmethod
     def deserialize(cls, filename):
-        with open(filename, 'rb') as f:
-            return pickle.load(f)
+        """
+        serialize and deserialize custom Python objects
+        using the pickle module
+        """
+
+        pass
