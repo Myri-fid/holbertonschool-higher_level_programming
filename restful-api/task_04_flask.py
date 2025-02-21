@@ -36,7 +36,8 @@ def show_user_profile(username):
     user = users.get(username)
     if user:
         return jsonify(user)
-
+    else:
+        return jsonify({"error": "User not found"}), 404
 
 @app.route('/data')
 def data():
@@ -46,11 +47,12 @@ def data():
     return jsonify(list(users.keys()))
 
 
-@app.route('/add_user')
-def user():
+@app.route('/add_user', methods=["POST"])
+def add_user():
     """
     ajouter un nouvel utilisateur
     """
+    data = request.get_json()
     username = data.get("username")
     if not username:
         return jsonify({"error": "Username is required"}), 400
