@@ -1,6 +1,4 @@
-from flask import Flask
-from flask import jsonify
-from flask import request
+from flask import Flask, jsonify, request
 """
 Initialisation de l'application Flask
 """
@@ -25,7 +23,7 @@ def status():
     """
     l'état du serveur
     """
-    return ("OK")
+    return "OK"
 
 
 @app.route('/user/<username>')
