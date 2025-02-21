@@ -42,24 +42,16 @@ def data():
     return jsonify(list(users.keys()))
 
 
-@app.route('/add_user', methods=["POST"])
+@app.route('/add_user', methods=['POST'])
 def add_user():
     """
-    un nouvel utilisateur via une requête POST
+    Retourne un dico
     """
     data = request.get_json()
-    username = data.get("username")
-    if not username:
+    if not data or "username" not in data:
         return jsonify({"error": "Username is required"}), 400
-
-    if username in users:
-        return jsonify({"error": "User already exists"}), 400
-    if not name or not age or not city:
-        return jsonify({"error": "Name, age, and city are required"}), 400
-    return jsonify({
-        "message": "User added",
-        "user": users[username]
-    }), 201
+    users[data["username"]] = data
+    return jsonify({"message": "User added", "user": data}), 201
 
 
 if __name__ == "__main__":
