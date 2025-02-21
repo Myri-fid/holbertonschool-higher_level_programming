@@ -28,12 +28,14 @@ def status():
     return ("OK")
 
 
-@app.route('/user/<username')
+@app.route('/user/<username>')
 def show_user_profile(username):
     """
     utilisateur par son nom d'utilisateur
     """
-    return (f'User {escape(username)}')
+    user = users.get(username)
+    if user:
+        return jsonify(user)
 
 
 @app.route('/data')
@@ -41,9 +43,7 @@ def data():
     """
     la liste des utilisateurs
     """
-    if data.path == '/status':
-        data.wfile.write(b'OK')
-    return jsonify()
+    return jsonify(list(users.keys()))
 
 
 @app.route('/add_user')
@@ -51,7 +51,11 @@ def user():
     """
     ajouter un nouvel utilisateur
     """
-    pass
+    username = data.get("username")
+    if not username:
+        return jsonify({"error": "Username is required"}), 400
+    if username in users:
+        return jsonify({"error": "User already exists"}), 400
 
 
 if __name__ == "__main__":
