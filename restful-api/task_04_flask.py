@@ -4,10 +4,7 @@ Initialisation de l'application Flask
 """
 app = Flask(__name__)
 
-users = {
-            "jane": {"name": "Jane", "age": 28, "city": "Los Angeles"},
-            "john": {"username": "john", "name": "John", "age": 30,
-                     "city": "New York"}}
+users = {}
 
 
 @app.route('/')
@@ -31,9 +28,8 @@ def show_user_profile(username):
     """
     Récupère le profil d'un utilisateur par son nom d'utilisateur
     """
-    user = users.get(username)
-    if user:
-        return jsonify(user)
+    if username in users:
+        return jsonify(users[username])
     else:
         return jsonify({"error": "User not found"}), 404
 
@@ -58,21 +54,8 @@ def add_user():
 
     if username in users:
         return jsonify({"error": "User already exists"}), 400
-
-    name = data.get("name")
-    age = data.get("age")
-    city = data.get("city")
-
     if not name or not age or not city:
         return jsonify({"error": "Name, age, and city are required"}), 400
-
-    users[username] = {
-        "username": username,
-        "name": name,
-        "age": age,
-        "city": city
-    }
-
     return jsonify({
         "message": "User added",
         "user": users[username]
@@ -80,4 +63,4 @@ def add_user():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
