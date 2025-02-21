@@ -12,16 +12,25 @@ users = {
 
 @app.route('/')
 def home():
+    """
+    Page d'accueil de l'API
+    """
     return "Welcome to the Flask API!"
 
 
 @app.route('/status')
 def status():
+    """
+    Vérifie l'état du serveur
+    """
     return "OK"
 
 
 @app.route('/users/<username>')
 def show_user_profile(username):
+    """
+    Récupère le profil d'un utilisateur par son nom d'utilisateur
+    """
     user = users.get(username)
     if user:
         return jsonify(user)
@@ -31,11 +40,17 @@ def show_user_profile(username):
 
 @app.route('/data')
 def data():
+    """
+    Retourne la liste des utilisateurs
+    """
     return jsonify(list(users.keys()))
 
 
 @app.route('/add_user', methods=["POST"])
 def add_user():
+    """
+    un nouvel utilisateur via une requête POST
+    """
     data = request.get_json()
     username = data.get("username")
     if not username:
