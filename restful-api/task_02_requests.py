@@ -36,7 +36,8 @@ def fetch_and_save_posts():
                        'body': post['body']} for post in posts]
         with open('posts.csv', mode='w', newline='') as file:
             writer = csv.DictWriter(file, fieldnames=['id', 'title', 'body'])
-
+            writer.writeheader()
+            writer.writerows(posts_list)
 
 if __name__ == "__main__":
     fetch_and_print_posts()
