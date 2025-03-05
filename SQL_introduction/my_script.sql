@@ -4,3 +4,4 @@ FROM students
 WHERE batch_id = 3 
 ORDER BY created_at DESC 
 LIMIT 3;
+sudo mysqld_safe --skip-grant-tables &
