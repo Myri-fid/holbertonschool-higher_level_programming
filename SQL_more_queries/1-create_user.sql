@@ -2,9 +2,9 @@
 CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
 
 -- privilege
-GRANT ALL PRIVILEGES
+GRANT SELECT
 ON *.* TO 'user_0d_1'@'localhost'
-WITH GRANT OPTION;
+GRANT SELECT ON 'hbtn_0d_2'.* TO 'user_0d_2'@'localhost'
 
 -- privilege
 FLUSH PRIVILEGES;
