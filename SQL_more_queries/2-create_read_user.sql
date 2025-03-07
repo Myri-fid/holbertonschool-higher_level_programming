@@ -1,2 +1,5 @@
 -- user_0d_2 password should be set to user_0d_2_pwd
-CREATE USER IF NOT EXISTS 'user_0d_2' PASSWORD 'user_0d_2_pwd' WITH GRANT SELECT;
+CREATE DATABASE IF NOT EXISTS hbtn_0d_2;
+-- creation user
+CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost' IDENTIFIED BY 'uSer_0d_2_pwd';
+GRANT SELECT ON hbtn_0d_2.* TO 'user_0d_2'@'localhost';
