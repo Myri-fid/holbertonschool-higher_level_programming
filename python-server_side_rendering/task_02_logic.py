@@ -9,7 +9,7 @@ def home():
     return render_template('index.html')
 
 @app.route('/about')
-def a_propos():
+def about():
     return render_template('about.html')
 
 @app.route('/contact')
@@ -18,9 +18,12 @@ def contact():
 
 @app.route('/items')
 def items():
-    with open(items.json) as file:
-        data = json.load(file)
-    items_list = data.get('items', [])
+    try:
+        with open('items.json', 'r') as file:
+            data = json.load(file)
+        items_list = data.get('items', [])
+    except (FileNotFoundError, json.JSONDecodeError):
+        items_list = []
     return render_template('items.html', items=items_list)
 
 if __name__ == '__main__':
