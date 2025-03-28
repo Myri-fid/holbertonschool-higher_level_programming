@@ -5,12 +5,11 @@
 </head>
 <body>
     <h1>Items List</h1>
-    {% if items %}
     <ul>
         {% for item in items %}
             <li>{{ item }}</li>
         {% else %}
-            <p>No items found.</p>
+            <p>No items found</p>
         {% endfor %}
     </ul>
 </body>

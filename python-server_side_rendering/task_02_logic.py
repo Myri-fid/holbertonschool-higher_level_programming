@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-import json
 from flask import Flask, render_template
+import json
 
 app = Flask(__name__)
 
