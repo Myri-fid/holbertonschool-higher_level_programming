@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from task_00_intro import generate_invitations
+from TASK0.task_00_intro import generate_invitations
 
 # Read the template from a file
 with open('template.txt', 'r') as file:
