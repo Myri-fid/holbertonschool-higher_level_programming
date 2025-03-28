@@ -40,12 +40,18 @@ def read_csv_file(file_name):
     return products
 
 def read_sqlite_data():
-    conn = sqlite3.connect('products.db')
-    cursor = conn.cursor()
-    cursor.execute('SELECT id, name, category, price FROM Products')
-    rows = cursor.fetchall()
-    conn.close()
-    products = [{'id': row[0], 'name': row[1], 'category': row[2], 'price': row[3]} for row in rows]
+    try:
+        conn = sqlite3.connect('products.db')
+        cursor = conn.cursor()
+        cursor.execute('SELECT id, name, category, price FROM Products')
+        rows = cursor.fetchall()
+        products = [{'id': row[0], 'name': row[1], 'category': row[2], 'price': row[3]} for row in rows]
+    except sqlite3.DatabaseError as e:
+        print(f"Database error occurred: {str(e)}")
+        products = []
+    finally:
+        if conn:
+            conn.close()
     return products
 
 @app.route('/products')
