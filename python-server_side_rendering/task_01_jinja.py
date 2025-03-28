@@ -8,7 +8,7 @@ def home():
     return render_template('index.html')
 
 @app.route('/about')
-def about():
+def a_propos():
     return render_template('about.html')
 
 @app.route('/contact')
