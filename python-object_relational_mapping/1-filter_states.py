@@ -16,16 +16,16 @@ def list_states():
         db=sys.argv[3],
     )
 
-    cur = conn.cursor()
+    cursor = conn.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
-    states = cur.fetchall()
+    states = cursor.fetchall()
 
     for state in states:
         print(state)
 
-    cur.close()
+    cursor.close()
     conn.close()
 
 if __name__ == "__main__":
