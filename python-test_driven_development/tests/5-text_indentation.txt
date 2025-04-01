@@ -1,0 +1,29 @@
+>>> text_indentation("Hello world. How are you? What is this: a test?")
+Hello world.
+
+How are you?
+
+What is this:
+
+a test?
+
+>>> text_indentation("Hello.   World.  ")
+Hello.
+
+World.
+
+>>> text_indentation("No punctuation here")
+No punctuation here>>> text_indentation("! Something here: yes?")
+! Something here:
+
+yes?
+>>> text_indentation("Spaces after:  check")
+Spaces after:
+
+check>>> text_indentation("Multiple spaces here    .   test")
+Multiple spaces here.
+
+test
+>>> text_indentation("")
+>>> text_indentation("Single punctuation .")
+Single punctuation .
