@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+"""This function connects to the MySQL """
 import MySQLdb
 import sys
-"""This function connects to the MySQL """
 
 
 def list_states():
