@@ -17,8 +17,9 @@ def list_states():
 
     cursor = conn.cursor()
 
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cursor.execute(query, (sys.argv[4],))
+    query = "SELECT * FROM states WHERE name = '{}'" \
+        "ORDER BY id ASC".format(sys.argv[4])
+    cursor.execute(query)
 
     states = cursor.fetchall()
 
