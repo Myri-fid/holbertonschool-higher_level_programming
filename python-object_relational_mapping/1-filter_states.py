@@ -4,7 +4,6 @@ import sys
 """This function connects to the MySQL """
 
 
-
 def list_states():
     """This function connects to the MySQL """
 
@@ -27,6 +26,7 @@ def list_states():
 
     cursor.close()
     conn.close()
+
 
 if __name__ == "__main__":
     list_states()
