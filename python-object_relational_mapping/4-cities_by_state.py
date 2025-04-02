@@ -17,8 +17,13 @@ def list_cities():
 
     cursor = conn.cursor()
 
-    query = "SELECT * FROM cities WHERE BINARY name = '{}'" \
-        "ORDER BY id ASC".format(sys.argv[4])
+    query = """
+    SELECT cities.id, cities.name, states.name
+    FROM cities
+    JOIN states ON cities.state_id = states.id
+    ORDER BY cities.id ASC
+    """
+    
     cursor.execute(query)
 
     cities = cursor.fetchall()
