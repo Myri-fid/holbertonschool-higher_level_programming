@@ -23,10 +23,9 @@ def list_cities_by_state():
         WHERE states.name = %s
         ORDER BY cities.id ASC
     """
-    cursor.execute(query)
+    cursor.execute(query, (sys.argv[4],))
     cities = cursor.fetchall()
-    for city in cities:
-        print(city)
+    print(", ".join([city[0] for city in cities]))
 
     cursor.close()
     conn.close()
