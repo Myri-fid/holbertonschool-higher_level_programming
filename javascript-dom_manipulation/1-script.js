@@ -1,2 +1,3 @@
-const element = document.getElementById('red_header');
-element.style.color = '#FF0000';
+element.addEventListener('click', (event) => {
+    document.querySelector('header').style.color = 'red';
+});
